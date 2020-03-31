@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Our Company's Application</h1>
+        <p id="description">Please fill out the following application.</p>
+    </header>
+    <form id="survey-form">
+        <div class="form-group">
+            <label id="name-label" for="name">Name</label>
+            <input 
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Type Your Name"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label id="email-label" for="email">Email</label>
+            <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Type Your Email"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label id="number-label" for="number">Age</label>
+            <input
+                type="number" 
+                name="age" 
+                id="number" 
+                placeholder="Type Your Age"
+                min="18"
+                max="100"
+            >
+        </div>
+        <div class="form-group">
+            <p>How did you hear about us?</p>
+            <select id="dropdown" name="source" required>
+                <option disabled selected>Select Option</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="indeed">Indeed</option>
+                <option value="Referral">Referral</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>How many years of experience do you have with HTML and CSS?</p>
+            <label>
+                <input
+                    name="years"
+                    value="less than 1"
+                    type="radio"
+                    checked
+                >Less than 1
+            </label>
+            <label>
+                <input
+                    name="years"
+                    value="1-4"
+                    type="radio"
+                >1-4
+            </label>
+            <label>
+                <input
+                    name="years"
+                    value="5+"
+                    type="radio"
+                >5+
+            </label>
+        </div>
+        <div class="form-group">
+            <p>Check all that you have experience with:</p>
+            <label>
+                <input
+                    name="exp"
+                    value="javascript"
+                    type="checkbox"
+                >JavaScript
+            </label>
+            <label>
+                <input
+                    name="exp"
+                    value="python"
+                    type="checkbox"
+                >Python
+            </label>
+            <label>
+                <input
+                    name="exp"
+                    value="mongodb"
+                    type="checkbox"
+                >MongoDB
+            </label>
+            <label>
+                <input
+                    name="exp"
+                    value="express.js"
+                    type="checkbox"
+                >Express.JS
+            </label>
+            <label>
+                <input
+                    name="exp"
+                    value="react"
+                    type="checkbox"
+                >React.JS
+            </label>
+            <label>
+                <input
+                    name="exp"
+                    value="node.js"
+                    type="checkbox"
+                >Node.JS
+            </label>
+        </div>
+        <div class="form-group">
+            <p>Is there anything else you would like to add?</p>
+            <textarea
+                name="comment"
+                placeholder="Enter your comment here:"
+            >
+            </textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
