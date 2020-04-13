@@ -1,140 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Mukta|Roboto&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <h1 id="title">Our Company's Application</h1>
-        <p id="description">Please fill out the following application.</p>
-    </header>
-    <form id="survey-form">
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Mukta&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">Survey Form</h1>
+        <p id="description" class="description text-center">
+          Please complete the following survey.
+        </p>
+      </header>
+      <form id="survey-form">
         <div class="form-group">
-            <label id="name-label" for="name">Name</label>
-            <input 
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Type Your Name"
-                required
-            >
+          <label id="name-label" for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Enter your name"
+            required
+          />
         </div>
         <div class="form-group">
-            <label id="email-label" for="email">Email</label>
+          <label id="email-label" for="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="number-label" for="number"
+            >Age<span class="clue">(optional)</span></label
+          >
+          <input
+            type="text"
+            name="age"
+            id="number"
+            min="18"
+            max="99"
+            class="form-control"
+            placeholder="Age"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <p>Which option best describes the work you're looking for?</p>
+          <select id="dropdown" name="role" class="form-control" required>
+            <option value="internship">Internship</option>
+            <option value="part-time">Part-Time</option>
+            <option value="full-time">Full-Time</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p>How did you hear about us?</p>
+          <label>
             <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Type Your Email"
-                required
-            >
-        </div>
-        <div class="form-group">
-            <label id="number-label" for="number">Age</label>
+              name="source"
+              value="referall"
+              type="radio"
+              class="input-radio"
+              checked
+            />Referall
+          </label>
+          <label>
             <input
-                type="number" 
-                name="age" 
-                id="number" 
-                placeholder="Type Your Age"
-                min="18"
-                max="100"
-            >
+              name="source"
+              value="linkedin"
+              type="radio"
+              class="input-radio"
+              checked
+            />LinkedIn
+          </label>
+          <label>
+            <input
+              name="source"
+              value="indeed"
+              type="radio"
+              class="input-radio"
+              checked
+            />Indeed
+          </label>
+          <label>
+            <input
+              name="source"
+              value="other"
+              type="radio"
+              class="input-radio"
+              checked
+            />Other
+          </label>
+        </div>
+
+        <div class="form-group">
+          <p>How many years of programming experience do you have?</p>
+          <select
+            id="experience"
+            name="experience"
+            class="form-control"
+            required
+          >
+            <option disabled selected value>Select an option</option>
+            <option value="0-1">0 - 1 year</option>
+            <option value="1-2">1 - 2 year(s)</option>
+            <option value="2-3">2 - 3 years</option>
+            <option value="3-4">3 - 4 years</option>
+            <option value="5+">5+ years</option>
+          </select>
         </div>
         <div class="form-group">
-            <p>How did you hear about us?</p>
-            <select id="dropdown" name="source" required>
-                <option disabled selected>Select Option</option>
-                <option value="linkedin">LinkedIn</option>
-                <option value="indeed">Indeed</option>
-                <option value="Referral">Referral</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <div class="form-group" id="input-radio">
-            <p>How many years of experience do you have with HTML and CSS?</p>
-            <label>
-                <input
-                    name="years"
-                    value="less than 1"
-                    type="radio"
-                    checked
-                >Less than 1
-            </label>
-            <label>
-                <input
-                    name="years"
-                    value="1-4"
-                    type="radio"
-                >1-4
-            </label>
-            <label>
-                <input
-                    name="years"
-                    value="5+"
-                    type="radio"
-                >5+
-            </label>
-        </div>
-        <div class="form-group" id="input-checkbox">
-            <p>Check all that you have experience with:</p>
-            <label>
-                <input
-                    name="exp"
-                    value="javascript"
-                    type="checkbox"
-                >JavaScript
-            </label>
-            <label>
-                <input
-                    name="exp"
-                    value="python"
-                    type="checkbox"
-                >Python
-            </label>
-            <label>
-                <input
-                    name="exp"
-                    value="mongodb"
-                    type="checkbox"
-                >MongoDB
-            </label>
-            <label>
-                <input
-                    name="exp"
-                    value="express.js"
-                    type="checkbox"
-                >Express.JS
-            </label>
-            <label>
-                <input
-                    name="exp"
-                    value="react"
-                    type="checkbox"
-                >React.JS
-            </label>
-            <label>
-                <input
-                    name="exp"
-                    value="node.js"
-                    type="checkbox"
-                >Node.JS
-            </label>
+          <p>
+            Which of the following do you have experience with?
+            <span class="clue">(Check all that apply)</span>
+          </p>
+          <label>
+            <input
+              name="tools"
+              value="javascript"
+              type="checkbox"
+              class="input-checkbox"
+            />JavaScript
+          </label>
+          <label>
+            <input
+              name="tools"
+              value="html/css"
+              type="checkbox"
+              class="input-checkbox"
+            />HTML/CSS
+          </label>
+          <label>
+            <input
+              name="tools"
+              value="React"
+              type="checkbox"
+              class="input-checkbox"
+            />React
+          </label>
+          <label>
+            <input
+              name="tools"
+              value="AWS"
+              type="checkbox"
+              class="input-checkbox"
+            />AWS
+          </label>
+          <label>
+            <input
+              name="tools"
+              value="typescript"
+              type="checkbox"
+              class="input-checkbox"
+            />TypeScript
+          </label>
+          <label>
+            <input
+              name="tools"
+              value="agile"
+              type="checkbox"
+              class="input-checkbox"
+            />AGILE
+          </label>
         </div>
         <div class="form-group">
-            <p>Is there anything else you would like to add?</p>
-            <textarea
-                name="comment"
-                placeholder="Enter your comment here:"
-            >
-            </textarea>
+          <p>Is there anything else you would like to add?</p>
+          <textarea
+            id="comments"
+            class="input-textarea"
+            name="comment"
+            placeholder="Enter your comment here"
+          ></textarea>
         </div>
         <div class="form-group">
-            <button type="submit">Submit</button>
+          <button type="submit" id="submit" class="submit-button">
+            Submit
+          </button>
         </div>
-    </form>
-</body>
+      </form>
+    </div>
+  </body>
 </html>
